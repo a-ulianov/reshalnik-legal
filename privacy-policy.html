@@ -13,12 +13,6 @@
     max-width: 760px; margin-inline: auto;
     color: #1c1a16; background: #faf7f0;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e9e4d8; background: #17140f; }
-    .lede { background: #221d15; border-color: #4a3d22; }
-    a { color: #d8b86a; }
-    code { background: #241d12; }
-  }
   h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 .2em; }
   h2 { font-size: 1.2rem; margin: 1.8em 0 .5em; }
   h3 { font-size: 1.02rem; margin: 1.3em 0 .3em; }
@@ -32,6 +26,16 @@
   code { background: #efe9db; padding: .1em .35em; border-radius: 4px; font-size: .9em; }
   hr { border: none; border-top: 1px solid #ddd0ab55; margin: 2.2em 0 1em; }
   .foot { color: #8a7c5f; font-size: .9rem; }
+  /* Тёмная тема — СТРОГО ПОСЛЕ базовых правил: при равной специфичности побеждает
+     позднее правило; прежний порядок оставлял в тёмной теме светлый контейнер .lede
+     под почти белым текстом (нечитаемо — замечание владельца 2026-07-23). */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e9e4d8; background: #17140f; }
+    .lede { background: #221d15; border-color: #4a3d22; }
+    .meta, .foot { color: #a4977a; }
+    a { color: #d8b86a; }
+    code { background: #241d12; }
+  }
 </style>
 </head>
 <body>
